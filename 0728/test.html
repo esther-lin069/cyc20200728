@@ -27,6 +27,37 @@
             </tr>
         </table>
     </div>
+    <div id="list_item">
+        <h2>春</h2>
+        <ol>
+            <li>東風解凍</li>
+            <li>蟄蟲始振</li>
+            <li>魚陟負冰</li>
+        </ol>
+
+        <h2>立春</h2>
+        <ul class="mark">
+            <li>東風解凍</li>
+            <li>蟄蟲始振</li>
+            <li>魚陟負冰</li>
+        </ul>
+
+
+        <h2>雨水</h2>
+        <ul>
+            <li>獺祭魚</li>
+            <li>候雁北</li>
+            <li>草木萌動</li>
+        </ul>
+
+
+        <h2>驚蟄</h2>
+        <ul>
+            <li>桃始華</li>
+            <li>倉庚鳴</li>
+            <li>鷹化為鳩</li>
+        </ul>
+    </div>
     
 </body>
 <style>
@@ -41,11 +72,33 @@
         height: auto;
         width: 80%;
     }
+
+    /*table*/
     .t1 td{
         border-width: 1px;
         border-radius: 0.2em;
         border-style: solid;
         border-color: brown;
+    }
+
+    /*list_item*/
+    h2 {
+    border-top: 1px solid gray;
+    padding: 5px;
+    font-style: italic;
+    margin: 10px auto;
+    height: 40px;
+    background-image:url("../Demo/images/dots.png");
+    }
+
+    ul {
+        list-style-type: circle;
+    }
+    ol {
+        list-style-type: upper-roman;
+    }
+    ul.mark {
+        list-style-image: url('../Demo/images/squarpurple.gif'); 
     }
 </style>
 </html>
