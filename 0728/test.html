@@ -60,15 +60,13 @@
     </div>
 
     <div class="default">
-        <div id="boxes">
+        <h3>適應排版 ：float + overflow</h3>
             <div id="box">1</div>
             <div id="box">2</div>
             <div id="box">3</div>
             <div id="box">4</div>
             <div id="box">5</div>
             <div id="box">6</div>
-
-        </div>
     </div>
 
     <div id="fixed">
@@ -81,12 +79,14 @@
         background: #ececec;
     }
     div.default{
+        position: relative;
         margin: 20px auto;
         padding: 20px;
         border-radius: 0.5em;
         background: white;
         height: auto;
         width: 80%;
+        overflow: auto;
     }
 
     /*table*/
@@ -118,18 +118,18 @@
     }
 
     /*box*/
-    #boxes{
-        text-align: center;
-    }
+    
     #box{
-        position: relative;
+        
         background: burlywood;
-        width: 20vw;
-        height: 20vw;
+        width: 200px;
+        height: 200px;
         margin-right: 20px;
         margin-bottom: 20px;
-        display: inline-block;
+        padding:5px;
+        float: left;
     }
+    
 
     /*fixed*/
     #fixed{
@@ -140,11 +140,13 @@
         height: 80px;
         background: #888888;
         border-radius: 0 0.5em 0 0;
+        opacity: 60%;
     }
     #fixed p{
         position: absolute;
         left: 20px;
         bottom: 20px;
+        color: white;
     }
 </style>
 </html>
