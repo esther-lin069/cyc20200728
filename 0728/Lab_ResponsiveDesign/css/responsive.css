@@ -1,0 +1,47 @@
+/* 500px <= screen-size <= 900px */
+@media screen and (max-width:900px){
+
+    /* (100%-5%margin)/2 */
+    div.one-third {
+        width: 47.5%;
+    }
+
+    /* 消除no.2的margin,避免跑版溢位 */
+    div.one-third-second {
+        margin: 0;
+    }
+
+    div.one-third-last {
+        clear: both;
+        float: none;
+        width: auto;
+        padding: 20px 0 0 0;
+    }
+
+    div.nav ul li {
+		width: 25%;
+		border-bottom: 1px solid #bababa;
+	}
+}
+
+/* screen-size <= 500px */
+@media screen and (max-width:500px){
+
+    /* = another one-third class's name */
+    div.mobile-collapse {
+		width: auto;
+		float: none;
+		margin-right: 0;
+	}
+    
+    /*  */
+	.hide-mobile {
+		display: none;
+    }    
+    
+    div.nav ul li {
+		width: 50%;
+		font-size: 85%;
+	}
+
+}
