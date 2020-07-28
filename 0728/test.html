@@ -59,14 +59,20 @@
         </ul>
     </div>
 
-    <div id="boxes" class="default">
-    <div id="box">1</div>
-    <div id="box">2</div>
-    <div id="box">3</div>
-    <div id="box">4</div>
-    <div id="box">5</div>
-    <div id="box">6</div>
+    <div class="default">
+        <div id="boxes">
+            <div id="box">1</div>
+            <div id="box">2</div>
+            <div id="box">3</div>
+            <div id="box">4</div>
+            <div id="box">5</div>
+            <div id="box">6</div>
 
+        </div>
+    </div>
+
+    <div id="fixed">
+        <p>我會固定在左下角<br>這行字absolute父階fixed方塊</p>
     </div>
     
 </body>
@@ -112,12 +118,33 @@
     }
 
     /*box*/
+    #boxes{
+        text-align: center;
+    }
     #box{
+        position: relative;
         background: burlywood;
-        width: 100px;
-        height: 100px;
-        margin-right: 5px;
-        margin-bottom: 5px;
+        width: 20vw;
+        height: 20vw;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    /*fixed*/
+    #fixed{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 25%;
+        height: 80px;
+        background: #888888;
+        border-radius: 0 0.5em 0 0;
+    }
+    #fixed p{
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
     }
 </style>
 </html>
