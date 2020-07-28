@@ -59,9 +59,10 @@
         </ul>
     </div>
 
+    <!-- float練習 -->
     <div class="default">
         <h3>適應排版 ：float + overflow</h3>
-            <div id="box">1</div>
+            <div id="box" class="color_anim">1</div>
             <div id="box">2</div>
             <div id="box">3</div>
             <div id="box">4</div>
@@ -69,17 +70,27 @@
             <div id="box">6</div>
     </div>
 
+    <!-- fixed固定區塊 -->
     <div id="fixed">
         <p>我會固定在左下角<br>這行字absolute父階fixed方塊</p>
+    </div>
+
+    <!-- 滾動的雲 -->
+    <div class="default">
+        <h3>重複圖片滾動</h3>
+        <div id="banner">
+            <div id="bannerImage"></div>
+            <div id="bannerText">Rolling Clouds</div>
+        </div>
     </div>
     
 </body>
 <style>
     body{
         background: #ececec;
+        margin-bottom: 100px;
     }
     div.default{
-        position: relative;
         margin: 20px auto;
         padding: 20px;
         border-radius: 0.5em;
@@ -121,7 +132,7 @@
     
     #box{
         
-        background: burlywood;
+        background: #82bb82;
         width: 200px;
         height: 200px;
         margin-right: 20px;
@@ -141,6 +152,7 @@
         background: #888888;
         border-radius: 0 0.5em 0 0;
         opacity: 60%;
+        z-index:1;
     }
     #fixed p{
         position: absolute;
@@ -148,5 +160,51 @@
         bottom: 20px;
         color: white;
     }
+
+    .color_anim{
+        animation: changeColor 10s;
+    }
+    @keyframes changeColor {
+      0% { background-color: #fa737322; }
+     50% { background-color: #8282f5; }
+    100% { background-color: #82bb82; }
+    } 
+
+    /*Rolling Cloud*/
+    #banner {
+        position: relative;
+        width: 800px;
+        height: 168px;
+        margin: 0px auto;
+        overflow: hidden;
+        outline: 1px solid gray;
+    }
+
+    #bannerText {
+        position: absolute;
+        right: 15px;
+        top: 8px;
+        font-family: Arial;
+        font-style: italic;
+        font-size: 20px;
+        color: DarkBlue;
+    }
+
+    #bannerImage {
+        position: relative;
+        width: 1800px;
+        height: 168px;
+        background-image: url('../Demo/Lab_RollingCloud/cloud.jpg');
+        background-repeat: repeat-x;
+    
+    /*Rolling Animation*/
+        -webkit-animation: rollImage linear 12s infinite;
+    }
+    /*瀏覽器相容性問題，重複之寫法略有不同*/
+    @-webkit-keyframes rollImage {
+	from { left: -300px; }
+	to { left: 0px; }
+    }
+
 </style>
 </html>
