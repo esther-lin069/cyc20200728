@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <div id="table">
+    <div id="table" class="default">
         <h3>表格練習</h3>
         <table class="t1" width="70%">
             <tr>
@@ -27,7 +27,7 @@
             </tr>
         </table>
     </div>
-    <div id="list_item">
+    <div id="list_item" class="default">
         <h2>春</h2>
         <ol>
             <li>東風解凍</li>
@@ -58,13 +58,23 @@
             <li>鷹化為鳩</li>
         </ul>
     </div>
+
+    <div id="boxes" class="default">
+    <div id="box">1</div>
+    <div id="box">2</div>
+    <div id="box">3</div>
+    <div id="box">4</div>
+    <div id="box">5</div>
+    <div id="box">6</div>
+
+    </div>
     
 </body>
 <style>
     body{
         background: #ececec;
     }
-    div{
+    div.default{
         margin: 20px auto;
         padding: 20px;
         border-radius: 0.5em;
@@ -99,6 +109,15 @@
     }
     ul.mark {
         list-style-image: url('../Demo/images/squarpurple.gif'); 
+    }
+
+    /*box*/
+    #box{
+        background: burlywood;
+        width: 100px;
+        height: 100px;
+        margin-right: 5px;
+        margin-bottom: 5px;
     }
 </style>
 </html>
