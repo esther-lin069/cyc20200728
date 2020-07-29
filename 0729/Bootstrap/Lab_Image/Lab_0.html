@@ -27,21 +27,28 @@
 
     </div> <!-- end of container -->
 
+    <!--若要無縫接圖片，在此加入class:no-gutters-->
+    <div class="row">
+        <div class="col-4 div-img">
+            <img id="imgDog" src="images/dog.jpeg" class="img-fluid" data-species="狗" />
+        </div>
+        <div class="col-4 div-img">
+            <img id="imgCat" src="images/cat.jpeg" class="img-fluid" data-species="貓" />
 
-<img id="imgDog"
-    src="images/dog.jpeg"
-    class=" "
-    data-species="狗" />
+        </div>
+        <div class="col-4 div-img">
+            <img id="imgRabbit" src="images/rabbit.jpeg" class="img-fluid" data-species="兔子" />
 
-<img id="imgCat"
-    src="images/cat.jpeg"
-    class=" "
-    data-species="貓" />
+        </div>
 
-<img id="imgRabbit"
-    src="images/rabbit.jpeg"
-    class=" "
-    data-species="兔子" />
+    </div>
+
+    <style>
+        .div-img{
+            min-height: 200px;
+        }
+    </style>
+
 
     <script>
 
