@@ -29,24 +29,30 @@
 
     <!--若要無縫接圖片，在此加入class:no-gutters-->
     <div class="row">
-        <div class="col-4 div-img">
-            <img id="imgDog" src="images/dog.jpeg" class="img-fluid" data-species="狗" />
+        <div class="col-12 col-sm-4">
+            <img id="imgDog" src="images/dog.jpeg" class="pet img-fluid img-thumbnail" data-species="狗" />
         </div>
-        <div class="col-4 div-img">
-            <img id="imgCat" src="images/cat.jpeg" class="img-fluid" data-species="貓" />
+        <div class="col-12 col-sm-4">
+            <img id="imgCat" src="images/cat.jpeg" class="pet img-fluid img-thumbnail" data-species="貓" />
 
         </div>
-        <div class="col-4 div-img">
-            <img id="imgRabbit" src="images/rabbit.jpeg" class="img-fluid" data-species="兔子" />
+        <div class="col-12 col-sm-4">
+            <img id="imgRabbit" src="images/rabbit.jpeg" class="pet img-fluid img-thumbnail" data-species="兔子" />
 
         </div>
 
     </div>
 
     <style>
-        .div-img{
+        .pet{
             min-height: 200px;
         }
+
+        /*利用css放大圖片互動
+        .pet:hover{
+            transform: scale(1.02); 
+            transition: all .2s linear; 
+        }*/
     </style>
 
 
