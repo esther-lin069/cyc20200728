@@ -140,13 +140,22 @@
                     firstName: $("#firstNameTextBox").val(),
                     lastName: $("#lastNameTextBox").val()
                 }
-                var url = "/test"
-                $.post(url,dataToServer,
-                    function(data){
-                        $("#resultSpan").text(data);
-                    }
-                )
-                //$("#resultSpan").text(JSON.stringify(dataToServer));
+                // var url = "/test"
+                // $.post(url,dataToServer,
+                //     function(data){
+                //         $("#resultSpan").text(data);
+                //     }
+                // )
+
+                $.ajax({
+                    type: "post",
+                    url: "/test",
+                    data: JSON.stringify(dataToServer),
+                    contentType: "application/json" //資料型別定義清楚
+                }).then(function(e){
+                    $("#resultSpan").text(e);
+                })
+                
             })
 
 
