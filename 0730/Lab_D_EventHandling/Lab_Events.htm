@@ -11,12 +11,38 @@
         }
 
         $(document).ready(function () {
-            // 在這裏寫程式
+            $("#btnTry").click(
+                function(){
+                    console("btnTry cilcked");
+                }
+            );
+        
+            $("#report").on(
+                "click",
+                function(){
+                    $("#report").html("Report:<br>");
+                }
+            );
             
+            $("#panda").on({
+                "mouseover":
+                function(){
+                    $("#panda").prop("src","panda2.jpg");
+                    console("mouse enter image");
+                },
+                "mouseout":
+                function(){
+                    $("#panda").prop("src","panda1.jpg");
+                    console("mouse leave image");
+                }
+            });
             
-            
-            
-            
+            $("#btnOff").click(
+                function(){
+                    $("#panda").off("mouseover");
+                    $("#panda").off("mouseout");//該函數效果關閉
+                }
+            );
             
             
             
