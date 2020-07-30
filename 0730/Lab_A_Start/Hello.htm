@@ -6,7 +6,11 @@
     <title>Hello</title>
     <script type="text/javascript" src="jquery.js"></script>
     <script>
-        
+        $(document).ready(function () {
+            $("div").click(function () {
+                $(this).hide("slow").show("fast");
+            });
+        });
     </script>
 </head>
 <body>

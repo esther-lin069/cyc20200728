@@ -24,8 +24,8 @@
 				// 與 210 相較，有何差別?
 
 
-// 250
-                var s = $("#aTextField").attr("value");
+// 250 使用prop為佳
+                var s = $("#aTextField").attr("value"); 
                 $("#report").append(s);
 
 
