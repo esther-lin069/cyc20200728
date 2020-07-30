@@ -25,7 +25,7 @@ console.log("鍵盤「Ctrl + C」可結束伺服器程式.");
 app.get("/hello/:text", function (request, response) {
 	// 模擬程式三秒鐘延遲
 	var stop = new Date().getTime();
-    while(new Date().getTime() < stop + 3000) {
+    while(new Date().getTime() < stop + 1500) {
         ;
     }	
 	

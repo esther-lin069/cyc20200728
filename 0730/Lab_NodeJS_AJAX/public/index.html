@@ -127,12 +127,10 @@
 
             $("#getButton").on("click", function() {
                 var s = $("#nameTextBox").val();
-
-
-
-
-
-                $("#reportSpan").text(s);
+                var url = "/hello/"
+                $.get(url + s, function(data) {
+                    $("#reportSpan").text(data);
+                })
             })
 
 
@@ -142,11 +140,13 @@
                     firstName: $("#firstNameTextBox").val(),
                     lastName: $("#lastNameTextBox").val()
                 }
-
-
-
-
-                $("#resultSpan").text(JSON.stringify(dataToServer));
+                var url = "/test"
+                $.post(url,dataToServer,
+                    function(data){
+                        $("#resultSpan").text(data);
+                    }
+                )
+                //$("#resultSpan").text(JSON.stringify(dataToServer));
             })
 
 
