@@ -44,16 +44,19 @@ $(document).ready(function () {
 
     $("#okButton").on('click', function () {
         var total = 0;
-        var i = 1;
-        while (i <= 5) {
-            total += i;
-            i++;
-        }
-        report.innerHTML += `A, total = ${total} <br>`;
+        // var i = 1;
+        // while (i <= 5) {
+        //     total += i;
+        //     i++;
+        // }
+        // report.innerHTML += `A, total = ${total} <br>`;
         // 請用 for 迴圈的語法重寫一遍, 參考答案附於稍後
 
 
-
+        for(let i=0;i<=5;i++){
+            total += i;
+        }
+        report.innerHTML = total;
 
 
 
