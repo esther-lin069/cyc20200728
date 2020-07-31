@@ -33,8 +33,10 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
 	host : '127.0.0.1',
 	user : 'root',
-	password : '',
-	database : 'labDB'
+	password : 'root',
+	database : 'labDB',
+	socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+
 });
 
 connection.connect(function(err) {

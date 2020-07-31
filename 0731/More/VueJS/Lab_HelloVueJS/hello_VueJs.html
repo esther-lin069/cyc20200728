@@ -18,6 +18,7 @@
 <body>
     <div id="app1">
         {{message}}
+        <button v-on:click="reverseMessage">Reverse Message</button>
     </div>
 
     <div id="app2">
@@ -46,6 +47,11 @@
         el: '#app1',
         data: {
             message: "Hello VueJs!"
+        },
+        methods: {
+            reverseMessage: function(){
+                this.message = this.message.split('').reverse().join('');
+            }
         }
     });
 
