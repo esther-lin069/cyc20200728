@@ -35,7 +35,8 @@ var connection = mysql.createConnection({
 	user : 'root',
 	password : 'root',
 	database : 'labDB',
-	socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+	//socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+	port : '8889'
 
 });
 
