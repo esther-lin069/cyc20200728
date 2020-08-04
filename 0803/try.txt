@@ -1,3 +1,6 @@
+課堂筆記：https://hackmd.io/GwtRN12RSJKxt5qFAfmjgg
+
+
 SELECT ProductID,ProductName,UnitPrice FROM  products
 SELECT * FROM suppliers WHERE suppliers.Country = 'USA'
 
