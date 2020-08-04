@@ -1,0 +1,77 @@
+SELECT ProductID,ProductName,UnitPrice FROM  products
+SELECT * FROM suppliers WHERE suppliers.Country = 'USA'
+
+----->合併為子查詢句子
+SELECT ProductID,ProductName,UnitPrice FROM  products //最後想要的結果項目
+WHERE SupplierID in 
+(SELECT SupplierID FROM suppliers WHERE suppliers.Country = 'USA')
+//與另一個資料表的資料做比對
+
+使用in比對同一筆資料類別，包含其中即符合子查詢條件
+
+
+----->(最外圈)子查詢 as 指定名稱，可作為該筆紀錄參考的環境資料
+1.算平均
+SELECT AVG(unitprice) from products 
+
+2.將總平均比較結果列出
+SELECT ProductID, CategoryID, ProductName, UnitPrice, 〖UnitPrice - (SELECT AVG(unitprice) FROM products) AS Diff〗//一個select欄位的內容
+FROM products 
+
+3.改為對某分類的平均做比對
+SELECT ProductID, CategoryID, ProductName, UnitPrice, 
+UnitPrice - (SELECT AVG(unitprice) FROM products WHERE CategoryID = (ex:)1) AS Diff FROM products
+
+4.想以屬於的各自分類計算平均?
+SELECT ProductID, CategoryID, ProductName, UnitPrice, 
+UnitPrice - (SELECT AVG(unitprice) FROM products WHERE CategoryID = ??) AS Diff FROM products
+
+5.將本次查詢結果設為p ，並置於項目中印出來試看看：(發現CategoryID is p.CategoryID)
+SELECT ProductID, CategoryID, p.CategoryID, ProductName, 
+UnitPrice, UnitPrice - (SELECT AVG(unitprice) FROM products WHERE CategoryID = 1) AS Diff FROM products AS p
+
+6.將p.CategoryID置於?處
+SELECT ProductID, CategoryID, ProductName, UnitPrice, 
+UnitPrice - (SELECT AVG(unitprice) FROM products WHERE CategoryID = p.CategoryID) AS Diff FROM products AS p
+
+7.發現自己可以把自己作為參照！
+
+*
+
+SELECT orderid,productID,(SELECT ProductName FROM products WHERE ProductID = p.ProductID) ,SUM(quantity) 
+FROM `order details` AS p
+GROUP BY orderid,ProductID 
+WITH ROLLUP
+
+SELECT productID, ProductName, a.supplierID, b.CompanyName 
+FROM products AS a LEFT OUTER JOIN suppliers AS b
+ON a.SupplierID = b.SupplierID //?
+----->
+SELECT o.orderID, customerID, SUM(unitPrice * Quantity) AS Total
+FROM  orders o JOIN `order details` od
+ON o.OrderID = od.OrderID GROUP BY orderID, customerID
+
+
+*
+
+select c.CustomerID, CompanyName, o.orderID, productName
+FROM customers c JOIN orders o ON c.CustomerID = o.CustomerID
+				JOIN `order details` od ON od.orderID = o.OrderID
+                JOIN products p ON p.ProductID = od.productID
+
+*
+取最新？筆資料順向排序
+select * FROM orders 
+order by orderDate desc limit 10 > 出來的是最新１０筆但排序錯誤
+
+select * from (select * FROM orders 
+order by orderDate desc limit 10 as od)
+---->
+select * FROM (SELECT OrderID, OrderDate 
+FROM Orders ORDER BY OrderDate DESC limit 10) AS T
+ORDER BY OrderDate ASC
+
+*
+SELECT orderID, customerID FROM orders AS or1
+WHERE 20 < (SELECT quantity FROM `order details` AS od 
+       WHERE od.orderID = or1.OrderID AND od.productID = 23)
