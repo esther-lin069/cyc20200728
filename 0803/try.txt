@@ -74,7 +74,13 @@ select * FROM (SELECT OrderID, OrderDate
 FROM Orders ORDER BY OrderDate DESC limit 10) AS T
 ORDER BY OrderDate ASC
 
-*
+*取得大於２０筆之２３號產品的訂單與客戶資料
 SELECT orderID, customerID FROM orders AS or1
 WHERE 20 < (SELECT quantity FROM `order details` AS od 
        WHERE od.orderID = or1.OrderID AND od.productID = 23)
+
+------>
+SELECT o.orderID, CustomerID, productID, od.Quantity
+FROM orders o JOIN `order details` od
+WHERE o.OrderID = od.OrderID
+AND od.Quantity > 20 AND productID = 23
