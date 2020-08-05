@@ -21,6 +21,7 @@ alter table friends
 
 describe friends;
 
+-要同時指定定義與變更，不然原本預設值會不見
 alter table friends
   modify email varchar(40) default 'who@where.com';
 
@@ -29,3 +30,6 @@ describe friends;
 -- -- 修改資料表結構 - 刪除欄位
 alter table friends
   drop column email;
+
+-- 傳統更嚴謹的資料驗證
+set sql_mode = 'tranditional';

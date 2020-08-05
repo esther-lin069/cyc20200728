@@ -84,3 +84,6 @@ SELECT o.orderID, CustomerID, productID, od.Quantity
 FROM orders o JOIN `order details` od
 WHERE o.OrderID = od.OrderID
 AND od.Quantity > 20 AND productID = 23
+
+1:N
+１的生命週期掌握Ｎ的生命週期－實線
