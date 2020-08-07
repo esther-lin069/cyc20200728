@@ -1,3 +1,10 @@
+mysql> show variables like 'data%';
++---------------+--------------------------------+
+| Variable_name | Value                          |
++---------------+--------------------------------+
+| datadir       | /Applications/MAMP/db/mysql57/ |
++---------------+--------------------------------+
+
 use test;
 
 drop table Lab;
@@ -6,13 +13,15 @@ create table Lab
 (
   id int auto_increment primary key,
   data int not null
-) engine = MyISAM;
+) engine = MyISAM; 
 -- ) engine = InnoDB;
 
 insert into Lab (data) values (100);
 
 select * from Lab;
 
+
+／／但MyISAM不支援交易異動操作
 start transaction;
 
 update lab set data = 200 where id = 1;
@@ -21,3 +30,12 @@ update lab set data = 200 where id = 1;
 rollback;
 
 select * from Lab;
+
+*InnoDB:
+做指令時會先存於log記憶體中，檢查點時間到了才會存入硬碟
+所以可以用rollback機制 （試做的概念）
+修復與同步（複寫指令）機制較健全
+
+*MyISAM:
+移植性佳，可以複製至別的資料庫 直接移動檔案即可得到整個資料庫
+

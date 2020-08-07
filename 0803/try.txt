@@ -87,3 +87,11 @@ AND od.Quantity > 20 AND productID = 23
 
 1:N
 １的生命週期掌握Ｎ的生命週期－實線
+
+*
+create unique index idx_company on customer(companyName);
+= (in version 5.7 sql)
+alter table customer add constraint  uc unique (companyName);
+
+> drop index idx_company on customer;
+
