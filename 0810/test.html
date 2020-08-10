@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <div id="debug"></div>
+    <script>
+    
+        function showStart(count){
+            if(count < 1){
+                alert("count > 0 plz");
+                return 0;
+            }
+            else if(count >= 21){
+                alert("count < 20 plz");
+                return 0;
+            }
+
+            let start = "*";
+            for(let i = 0;i <= count;i++){
+                start += "*";
+            }
+            alert(start);
+        }
+        
+        showStart(0);
+        
+    </script>
+</body>
+</html>

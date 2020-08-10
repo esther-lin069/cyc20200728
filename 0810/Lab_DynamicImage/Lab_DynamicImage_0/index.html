@@ -22,5 +22,28 @@ TODO:
 </a>
 
 <p>...</p>
+
+
 </body>
+  <div id="debug"></div>
+  <script>
+    var myTime = setInterval(setImage,2000);
+    var min = 0;
+    var imgUrl = [];
+      imgUrl[0] = ["images/chc.gif","http://chicago.cubs.mlb.com/"];
+      imgUrl[1] = ["images/oak.gif","http://oakland.athletics.mlb.com/"];
+      imgUrl[2] = ["images/sd.gif","http://sandiego.padres.mlb.com/"];
+      imgUrl[3] = ["images/was.gif","http://washington.nationals.mlb.com/"];
+
+    function setImage(){     
+  
+      min += 1;
+      debug.innerText = min;
+
+      document.getElementById("imgshref").href = imgUrl[min % imgUrl.length][1];
+      document.getElementById("imgs").src = imgUrl[min % imgUrl.length][0];
+    }
+    
+    
+  </script>
 </html>
