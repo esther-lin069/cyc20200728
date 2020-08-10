@@ -95,3 +95,12 @@ alter table customer add constraint  uc unique (companyName);
 
 > drop index idx_company on customer;
 
+*transaction
+
+lock tables table_name (read/write);
+unlock tables;
+
+同時多個排隊時 write 會比 read 先進去序列（怕讀到舊的資料）
+
+＊transaction
+不論隔離等級，在做update delete時會鎖write lock 直到commit
