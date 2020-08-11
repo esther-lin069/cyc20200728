@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Image Lab</title>
+</head>
+<body>
+
+<p>...</p>
+
+<!-- 
+TODO:
+請檢視以下這段 HTML，設計師用 <a> 與 <img> 做了
+一個圖片式的超連結，目前固定連往運動家隊。
+
+請想想看 ：如何讓訪客造訪本頁時，隨機看到不同的
+球隊圖案（超連結也要一併對應唷）。 
+-->
+
+<a id="imgshref" href="" target="_blank">
+  <img src="" id="imgs" border="0" />
+</a>
+
+<p>...</p>
+
+
+</body>
+  <div id="debug"></div>
+  <script>
+    // var myTime = setInterval(setImage,2000);
+    // var min = 0;
+    // var imgUrl = [];
+    //   imgUrl[0] = ["images/chc.gif","http://chicago.cubs.mlb.com/"];
+    //   imgUrl[1] = ["images/oak.gif","http://oakland.athletics.mlb.com/"];
+    //   imgUrl[2] = ["images/sd.gif","http://sandiego.padres.mlb.com/"];
+    //   imgUrl[3] = ["images/was.gif","http://washington.nationals.mlb.com/"];
+
+    // function setImage(){     
+  
+    //   min += 1;
+    //   debug.innerText = min;
+
+    //   document.getElementById("imgshref").href = imgUrl[min % imgUrl.length][1];
+    //   document.getElementById("imgs").src = imgUrl[min % imgUrl.length][0];
+    // }
+    
+    // class imgUrl{
+    //   constructor(img,url){
+    //     this.img = img;
+    //     this.url = url;
+    //   }
+    //   static change(){
+    //     document.getElementById("imgshref").href = this.url;
+    //     document.getElementById("imgs").src = this.img;
+    //   }
+    // }
+
+    /*var srcArray = [new imgUrl("images/chc.gif","http://chicago.cubs.mlb.com/"),
+                    new imgUrl("images/chc.gif","http://chicago.cubs.mlb.com/"),
+                    new imgUrl("images/chc.gif","http://chicago.cubs.mlb.com/"),
+                    new imgUrl("images/chc.gif","http://chicago.cubs.mlb.com/")];*/
+
+    var imgUrl = function(img,url){
+      this.img = img;
+      this.url = url;
+    }
+
+    imgUrl.prototype.setImgUrl = function(){
+      document.getElementById("imgshref").href = this.url;
+      document.getElementById("imgs").src = this.img;
+    }
+
+    Chicago = new imgUrl("images/chc.gif","http://chicago.cubs.mlb.com/");
+    Chicago.setImgUrl();
+    //document.getElementById("imgs").src = Chicago.img;
+    
+  </script>
+</html>
+

@@ -12,7 +12,68 @@
 
     <script>
 
+        /*var obj = new Object();  // A
+        //var obj = {};  // B
+        obj.firstName = "Wolfgang";
+        obj.lastName = "Chien";
+        obj.sayHello = function () {
+            debug.innerHTML += `Hello! ${this.firstName} <br>`;	
+        };
 
+        debug.innerHTML = obj.firstName + "<br>";
+
+        obj.sayHello();*/
+
+
+        /*function Box() {
+            this.color = 'black';
+            this.paint = function (value) {
+                this.color = value;
+            }
+        }
+
+        var objBox = new Box();
+        objBox.paint("Blue");
+        debug.innerHTML = objBox.color;*/
+
+        class Animal{
+            constructor(){
+                this._weight = 0;
+            }
+            get weight(){
+                return this._weight;
+            }
+            set weight(weightValue){
+                if(weightValue > 0){
+                    this._weight = weightValue;
+                }
+            }
+            makeSound(){
+                alert(`Animal:I'm ${this._weight} kg`)
+            }
+            move(d){
+                alert(`move ${d} steps`)
+            }
+        }
+
+        // let lion = new Animal();
+        
+        // lion.weight = 100;
+        // lion.makeSound();
+
+        class Dog extends Animal{
+            constructor(location = "Earth",weightValue){
+                super(weightValue); //呼叫Animal的constructor
+                this.location = location;
+            }
+            makeSound(){
+                super.makeSound();
+            }
+        }
+        let doggi = new Dog();
+        doggi.weight = 5;
+        doggi.makeSound();
+        alert(doggi.location);
 
     </script>
 

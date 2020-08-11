@@ -46,7 +46,7 @@ alert(obj.weight.toString());
 
 "use strict";
 class CAnimal {
-    constructor(weightValue = 1) {
+    constructor(weightValue = 1) {  <預設會執行
         this._weight = 0;
         this.weight = weightValue;
     }

@@ -24,7 +24,16 @@
             alert(start);
         }
         
-        showStart(0);
+        function showFullName(){
+            debug.innerText = this.firstName + " " + this.lastName;
+        }
+        
+        var lin = {
+            firstName: "Heide",
+            lastName: "Lin",
+            toString: showFullName
+        }
+        lin.toString();
         
     </script>
 </body>
