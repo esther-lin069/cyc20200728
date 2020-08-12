@@ -43,16 +43,20 @@
         ];
     
     function sendMail(mailAddress) {
+        var isSucceed = true;
         try {
             $("#report").append(mailAddress.toString() + "<br>");
         }
         catch (e) {
+            isSucceed  = false;
             $("#report").append(e.message + "<br>");
         }
+        return isSucceed;
     }
     
     for (i = 0; i < mailList.length; i++) {
-        sendMail(mailList[i]);
+        if(sendMail(mailList[i]) == false)
+            sendMail(mailList[i]);
     }
     
     

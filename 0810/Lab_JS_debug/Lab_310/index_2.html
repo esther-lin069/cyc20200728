@@ -47,9 +47,13 @@
         
         for (i = 1; i < upperValue; i++) {
             result = result + i;
-            // console.assert(
-            //     result != 45, 
-            //     "when i = " + i + ", we got wrong value.");
+            //以下偵錯片段發現指定條件發生只會提醒 不會終止程式
+            /*console.assert(
+                result != 45, 
+                "when i = " + i + ", we got wrong value.");*/
+
+            //符合條件即終止程式
+            if(result == 45)debugger;
         }
 
         return result;

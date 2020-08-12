@@ -22,7 +22,7 @@
         </div>
 
         <p class="task-description">
-            為什麼陣列的內容清不乾淨呢?
+            為什麼陣列的內容清不乾淨呢? 因為陣列愈刪愈短 小於長度就刪不到ㄌ
         </p>
 
         <div id="report"></div>
@@ -36,6 +36,7 @@
     
     function emptyArray(source) {
         var i = 0;
+        debugger;
         var arrayLength = source.length;
         for (i = 0; i < arrayLength; i++) {
             source.splice(i, 1);

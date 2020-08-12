@@ -13,7 +13,7 @@ function longTimeWork(workFine = true, errorMessage = "test") {
 
 async function usingLongTimeWork() {
     try {
-        var result = await longTimeWork(false, "test");
+        var result = await longTimeWork(true, "test"); //等待p執行後傳回結果,相當於p呼叫then
         console.log(result);
     }
     catch (e) {
