@@ -6,16 +6,15 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $("#btnTry").click(function () {
-                // 在這裏寫程式
-                
-
-
-                
-
-                
-                
+              var s = $("#aTextField").val();//.prop("value","Hi");
+              $("#report").append(s);
+              $("input[name='radioGroup']:eq(2)").prop("checked","checked");
+              $("#report").append("radio C selected.");
+                             
                 
             })
+            
+
         });
     </script>
 </head>

@@ -62,3 +62,5 @@
 9.	存檔，瀏覽 Lab_Events.htm，先點一下「Off」按鈕，
 	再移動滑鼠指標到圖片上方試試看。
 
+https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/271561/
+mouseenter vs mouseover

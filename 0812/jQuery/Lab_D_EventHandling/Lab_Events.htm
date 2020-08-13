@@ -11,10 +11,20 @@
         }
 
         $(document).ready(function () {
-            // 在這裏寫程式
+            let obj = document.getElementById("panda");
+            $(obj).on("mouseenter",function () {
+                $(this).prop("src","panda2.jpg");
+            })
+            $(obj).on("mouseleave",function () {
+                $(this).prop("src","panda1.jpg");
+            })
             
-            
-            
+            $("#btnOff").click( 
+                function () { 
+                    $("#panda").off("mouseenter");
+                    $("#panda").off("mouseleave");
+                }  
+            );          
             
             
             
