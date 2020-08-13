@@ -1,9 +1,11 @@
 # cyc2020_clone-from-class
 
--0727 git
--0728 HTML&CSS
--0729 Boostrap
--0730 jQuery&AJAX
--0731 HTML form
+-0727 git <br>
+-0728 HTML&CSS<br>
+-0729 Boostrap<br>
+-0730 jQuery&AJAX<br>
+-0731 HTML form<br>
 
--0803 PHP&MySQL
+-0803 PHP&MySQL<br>
+-0810 JS<br>
+-0812 
