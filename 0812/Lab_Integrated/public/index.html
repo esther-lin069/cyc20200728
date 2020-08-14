@@ -197,19 +197,28 @@ $(function () { //=doc.ready
 
         })
 
-        //step6. delete data why put here?
-        $(".deleteItem").click(function(){
+        //*step6. delete data why put here?  :清完之後要重新綁定事件
+        $(".deleteItem").click(function(){ //不能用=>因為其this代表全域
             //var index = $(this).parent().parent().index(); //why not val?
-            var index = $(this).closest("li").index();
+            var index = $(this).closest("li").index(); //get index
             $.ajax({
                 type: "delete",
                 url: "/home/news",
                 data: newsList[index]
             }).then(GetData_Refresh);
         })
+
+        //*step.7 edit item data
+        $(".editItem").click(function(){
+            var index = $(this).closest("li").index();
+
+            $("#titleTextBox").val(newsList[index].title);
+            $("#ymdTextBox").val(newsList[index].ymd);
+            $("#newsModal").modal( { backdrop: "static" } );
+        })
     }
 
-    //*step3. add modal-box
+    //*step3. add modal-box （右上角的＋）
     $("#newItem").click(function(){
         $("#newsModal").modal({backdrop:"static"}); //click-and show box
     })
