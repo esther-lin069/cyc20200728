@@ -142,7 +142,7 @@ function showToast(heading, message) {
 
 <script>
 
-$(function () {
+$(function () { //=doc.ready
 
     var newsList =
     [
@@ -158,14 +158,17 @@ $(function () {
     }
 
     //*step2. get data
-    $.ajax({
+    function GetData_Refresh(){
+        $.ajax({
         type:"get",
         url: "/home/news",
         success: function(e){
             newsList = JSON.parse(e);
             refreshNewsUI();
         }
-    })
+        })
+    }
+    GetData_Refresh();
 
     /*$.get("/home/news", function (e) {
         newsList = JSON.parse(e);
@@ -198,6 +201,28 @@ $(function () {
     //*step3. add modal-box
     $("#newItem").click(function(){
         $("#newsModal").modal({backdrop:"static"}); //click-and show box
+    })
+
+    //*step4. box ok
+    $("#okButton").click(function(){
+        $("#newsModal").modal("hide");
+
+        let dataToServe = {
+            title: $("#titleTextBox").prop("value"),
+            ymd: $("#ymdTextBox").val()
+        }
+        //*step5. post data //and refresh
+        $.ajax({
+            type: "post",
+            url: "/home/news",
+            contentType: "application/json",
+            data: JSON.stringify(dataToServe)
+        }).then(function(){
+            console.log(dataToServe);
+            GetData_Refresh();
+        })
+
+        
     })
     
     //getli();
