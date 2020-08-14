@@ -196,6 +196,17 @@ $(function () { //=doc.ready
         $li.appendTo($("#latestNews"));
 
         })
+
+        //step6. delete data why put here?
+        $(".deleteItem").click(function(){
+            //var index = $(this).parent().parent().index(); //why not val?
+            var index = $(this).closest("li").index();
+            $.ajax({
+                type: "delete",
+                url: "/home/news",
+                data: newsList[index]
+            }).then(GetData_Refresh);
+        })
     }
 
     //*step3. add modal-box
