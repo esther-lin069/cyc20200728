@@ -144,14 +144,8 @@ function showToast(heading, message) {
 
 $(function () { //=doc.ready
 
-    var newsList =
-    [
-        { ymd: "2017-05-01", title: "Item 1" },
-        { ymd: "2017-05-01", title: "Item 2" },
-        { ymd: "2017-05-02", title: "Item 3" },
-        { ymd: "2017-05-03", title: "Item 4" },
-        { ymd: "2017-05-04", title: "Item 5" }
-    ];
+    var newsList = [];
+    
     function getli(){
         var $lic = $(".list-group-item").eq(0).html();
         console.log($lic)
@@ -164,6 +158,7 @@ $(function () { //=doc.ready
         url: "/home/news",
         success: function(e){
             newsList = JSON.parse(e);
+            //console.log(newsList); {newsId: /title: /ymd: }
             refreshNewsUI();
         }
         })
@@ -271,6 +266,7 @@ $(function () { //=doc.ready
     })
     
     //getli();
+    
 
 
 })  // end of init.
