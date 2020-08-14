@@ -211,7 +211,7 @@ $(function () { //=doc.ready
         //*step.7 edit item data
         $(".editItem").click(function(){
             var index = $(this).closest("li").index();
-
+            currentIndex = index;
             $("#titleTextBox").val(newsList[index].title);
             $("#ymdTextBox").val(newsList[index].ymd);
             $("#newsModal").modal( { backdrop: "static" } );
@@ -220,27 +220,52 @@ $(function () { //=doc.ready
 
     //*step3. add modal-box （右上角的＋）
     $("#newItem").click(function(){
+        currentIndex = -1;
         $("#newsModal").modal({backdrop:"static"}); //click-and show box
     })
+
+    //step.7-1
+    var currentIndex = -1;
 
     //*step4. box ok
     $("#okButton").click(function(){
         $("#newsModal").modal("hide");
 
-        let dataToServe = {
+        if(currentIndex < 0){
+            let dataToServe = {
             title: $("#titleTextBox").prop("value"),
             ymd: $("#ymdTextBox").val()
+            }
+            //*step5. post data //and refresh
+            $.ajax({
+                type: "post",
+                url: "/home/news",
+                contentType: "application/json",
+                data: JSON.stringify(dataToServe)
+            }).then(function(){
+                //console.log(dataToServe);
+                GetData_Refresh();
+            })
         }
-        //*step5. post data //and refresh
-        $.ajax({
-            type: "post",
-            url: "/home/news",
-            contentType: "application/json",
-            data: JSON.stringify(dataToServe)
-        }).then(function(){
-            console.log(dataToServe);
-            GetData_Refresh();
-        })
+        else{
+            //currentIndex as index
+            let dataToServe = {
+                newsId:newsList[currentIndex].newsId,
+                title: $("#titleTextBox").prop("value"),
+                ymd: $("#ymdTextBox").val()
+            }
+            //console.log(dataToServe);
+            //*step7-2 put data
+            $.ajax({
+                type: "put",
+                url: "/home/news",
+                contentType: "application/json",
+                data: JSON.stringify(dataToServe)
+            }).then(function(){
+                GetData_Refresh();
+            })
+        }
+        
 
         
     })
