@@ -1,7 +1,7 @@
 <?php
 
 $fileDir = dirname ( __FILE__ );
-$fileResource = opendir ( $fileDir );
+$fileResource = opendir ( $fileDir ); //開檔
 
 ?>
 <!DOCTYPE html>
@@ -14,11 +14,11 @@ $fileResource = opendir ( $fileDir );
 
 	<p>File list:</p>
 	<ul>
-	<?php while ($item = readdir($fileResource)) : ?>
+	<?php while ($item = readdir($fileResource)) : //讀檔?>
 		<li><?php echo $item; ?></li>
 	<?php endwhile; ?>
 	</ul>
 
-<?php closedir($fileResource); ?>
+<?php closedir($fileResource); //關檔 ?> 
 </body>
 </html>

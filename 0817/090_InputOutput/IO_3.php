@@ -9,7 +9,7 @@ function processFile($objFile) {
 		return;
 	}
 	
-	$test = move_uploaded_file ( $objFile ["tmp_name"], "./" . $objFile ["name"] );
+	$test = move_uploaded_file ( $objFile ["tmp_name"], "./" . $objFile ["name"] );//檔案上傳到當前路徑
 	if (! $test) {
 		die ( "move_uploaded_file() faile" );
 	}

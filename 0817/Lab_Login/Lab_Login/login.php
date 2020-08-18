@@ -1,3 +1,28 @@
+<?php
+  session_start();
+
+  if(isset($_GET['logout'])){
+    session_destroy();
+    header("Location: index.php");
+    exit;
+  }
+
+  if(isset($_POST['btnOK'])){
+    $userName = $_POST['txtUserName'];
+    if(trim($userName) != ''){
+      echo $userName;
+      $_SESSION['user'] = $userName;
+
+      header("Location: index.php");
+      exit;
+    }
+    else{
+      echo "Please input username";
+    }
+  }
+
+?>
+
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

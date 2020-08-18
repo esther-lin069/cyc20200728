@@ -4,7 +4,7 @@ header("content-type: text/html; charset=utf-8");
 $season = array('春', '夏', '秋', '冬'); 
 
 echo "每年的四季分別為：";
-foreach ($season as $value){
+foreach ($season as $value){ //相當於python的 value in array:
 	echo $value;
 }
 

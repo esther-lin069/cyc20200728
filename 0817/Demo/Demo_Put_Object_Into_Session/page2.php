@@ -1,6 +1,6 @@
 <?php
 require_once "ClassLib.php";
-session_start();
+session_start(); //sesstion要先知道結構定義才能處理內容
 
 if (!isset($_SESSION["obj"])) {
 	$obj = new CDog(2, 20);	
