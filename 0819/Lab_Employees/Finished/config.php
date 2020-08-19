@@ -1,8 +1,9 @@
 <?php
 	
-	$dbhost = 'localhost';
+	$dbhost = '127.0.0.1';
 	$dbuser = 'root';
-	$dbpass = '';
+	$dbpass = 'root';
 	$dbname = 'directory';
+	$port = '8889';
 
 ?>

@@ -7,7 +7,7 @@ if (! is_numeric ( $id ))
 	die ( "id not a number." );
 
 require ("config.php");
-$link = mysqli_connect ( $dbhost, $dbuser, $dbpass ) or die ( mysqli_connect_error() );
+$link = mysqli_connect ( $dbhost, $dbuser, $dbpass, "",$port ) or die ( mysqli_connect_error() );
 $result = mysqli_query ( $link, "set names utf8");
 mysqli_select_db ( $link, $dbname );
 $commandText = <<<SqlQuery
