@@ -43,8 +43,8 @@ $result = mysqli_query($link,$sql);
         <td>
         <span class="float-right">
             <a href="<?= 'edit.php?id='.$row['ID']?>" class="btn btn-outline-info" role="button">Edit</a>
-            <button id="delBtn" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#alertModal"
-            data-row="<?= 'delete.php?id='.$row['ID']?>" >
+            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#alertModal"
+            data-row="<?= 'delete.php?id='.$row['ID'] ?>"  onclick="DeleteClick(this);">
             Delete
             </button>
             <!-- <a href="<?= 'delete.php?id='.$row['ID']?>" class="btn btn-outline-danger" role="button">Delete</a> -->
@@ -72,7 +72,7 @@ $result = mysqli_query($link,$sql);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button id="delSubmit" onclick="DeleteClick();" type="button" class="btn btn-primary">OK</button>
+        <a id="delSubmit" href="#" role="button" class="btn btn-primary">OK</a>
       </div>
     </div>
   </div>
@@ -81,10 +81,10 @@ $result = mysqli_query($link,$sql);
 </body>
 <script>
 
-function DeleteClick(){
-  var delRow = document.getElementById('delBtn').dataset.row;
-  //window.location = delRow.dataset.row;
-  console.log(delRow);
+function DeleteClick(obj){
+  var delRow = obj.dataset.row;
+  var Btn = document.getElementById('delSubmit').href = delRow;
+  //console.log(delRow);
 }
 
 </script>
