@@ -8,7 +8,7 @@
 
 -0803 PHP&MySQL<br>
 -0810 JS<br>
--0812 jQuery API
--0817 PHP :form.session.cookie
--0819 PHP :db_CRUD
--0820 MVC.API
+-0812 jQuery API<br>
+-0817 PHP :form.session.cookie<br>
+-0819 PHP :db_CRUD<br>
+-0820 MVC.API<br>
