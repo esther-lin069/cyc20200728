@@ -1,0 +1,17 @@
+  Problem 1
+    - Installation request for laravel/installer ^3.2 -> satisfiable by laravel/installer[v3.2.0].
+    - laravel/installer v3.2.0 requires ext-zip * -> the requested PHP extension zip is missing from your system.
+
+    -------
+
+php -m :search for zip modules
+
+touch ~/.bash_profile; open ~/.bash_profile
+
+export MAMP_PHP=/Applications/MAMP/bin/php/php7.4.2/bin
+export MAMP_BINS=/Applications/MAMP/Library/bin
+export USERBINS=~/bins
+export PATH="$USERBINS:$MAMP_PHP:$MAMP_BINS:$PATH"
+
+https://stackoverflow.com/questions/4145667/how-to-override-the-path-of-php-to-use-the-mamp-path
+https://ithelp.ithome.com.tw/questions/10197751?sc=rss.qu
